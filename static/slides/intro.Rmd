@@ -1,0 +1,281 @@
+---
+title: "Bilgisayar IV"
+author: "Dr. Busenur Kızılaslan"
+date: "2021/03/01 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/sfah.css", "css/fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      beforeInit: "https://platform.twitter.com/widgets.js"
+    seal: false 
+    includes:
+      in_header: header.html
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+# options(knitr.table.format = "html")
+library(tidyverse)
+library(babynames)
+library(fontawesome) # from github: https://github.com/rstudio/fontawesome
+library(DiagrammeR)
+```
+
+layout: true
+  
+<div class="my-footer"><span>Marmara University/Statistics</span></div>
+
+<!-- this adds the link footer to all slides, depends on my-footer class in css-->
+
+---
+name: xaringan-title
+class: center
+background-image: url("img/franki-chamaki-1K6IQsQbizI-unsplash.jpg")
+background-size: cover
+
+
+
+# Bilgisayar IV
+
+## Dr. Busenur Kızılaslan | 2021
+
+
+<!-- this ends up being the title slide since seal = FALSE-->
+
+---
+class: right
+background-image: url("img/monika-grabkowska-1141662-unsplash.jpg")
+background-size: cover
+
+## .fat[Bir bilgisayar] 
+## .fat[dersinden] 
+## .fat[çok daha] 
+## .fat[fazlası!]
+
+---
+
+class: right, middle
+
+<img class="circle" src="img/busenur.sarica.png" width="200px"/>
+
+
+# bana ulaşmak için...
+
+  
+[`r fa(name = "github")` @busenurk](https://github.com/busenurk)  
+[`r fa(name = "link")` googlescholar/busenurkizilaslan](https://scholar.google.com.tr/citations?user=OKlYJEgAAAAJ&hl=tr&oi=ao)  
+[`r fa(name = "link")` avesis/busenurkizilaslan](https://avesis.marmara.edu.tr/busenur.sarica)    
+[`r fa(name = "paper-plane")` busenur.sarica@marmara.edu.tr](mailto:busenur.sarica@marmara.edu.tr)
+
+---
+class: right,bottom,inverse
+background-image: url("img/pygmy.jpg")
+background-size: cover
+
+
+## Her çarşamba
+
+--
+
+## Ders | 18:00 - 18:50 
+
+--
+
+## Kahve molası | 18:50 - 19:00 
+
+--
+
+## Ders | 19:00 - 19:50 
+
+---
+
+class: left
+# Kaynaklar I
+----------------
+
+###📕📗 Kitaplar
+
+[The R Book - Michael J. Crawley](https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf)
+
+[R for Data Science - Hadley Wickham, Garrett Grolemund](https://r4ds.had.co.nz)
+
+[Introduction to Data Science - Rafael A. Irizarry](https://rafalab.github.io/dsbook/)
+
+[R Programming for Data Science - Roger D. Peng](https://bookdown.org/rdpeng/rprogdatascience/)
+
+[The Book of R - Tilman M. Davies](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
+
+---
+
+class: left
+# Kaynaklar II
+----------------
+
+###👩🏻‍💻👨🏻‍💻 Eğitimler
+
+[HarvardX - Data Science: R Basics](https://www.edx.org/course/data-science-r-basics) 
+
+[HarvardX - Data Science: Visualization](https://www.edx.org/course/data-science-visualization)
+
+[HarvardX - Data Science: Probability](https://www.edx.org/course/data-science-probability)
+
+
+---
+class: left, middle, inverse
+background-image: url("img/davisuko-5E5N49RWtbA-unsplash.jpg")
+background-size: cover
+
+# İSTATİSTİK NEDİR ?
+
+---
+class: middle, center
+
+# İstatistik veriden öğrenme sanatıdır. 
+
+## Sheldon M. Ross
+
+---
+class: middle, right
+background-image: url("img/kelli-tungay-2LJ4rqK2qfU-unsplash.jpg")
+background-size: cover
+
+
+### .salt[toplanması] 
+
+--
+
+### .acid[düzenlenmesi] 
+
+--
+
+### .heat[analizi]
+
+--
+
+### .salt[yorumlanması] 
+
+--
+
+### .fat[sunulması]
+---
+
+# Ders İçeriği  🚀
+
+------------
+
+## 🌍 Analiz
+
+--
+
+## 🌍 Sunu
+
+--
+
+## 🌍 Okuma / Tartışma
+
+--
+
+## 🌍 Öneriler
+
+---
+class: inverse
+background-image: url("img/todd-quackenbush-x5SRhkFajrA-unsplash.jpg")
+background-size: cover
+
+# Ön koşullar
+
+---
+class: left, middle, inverse
+background-image: url("img/github.png")
+background-size: cover
+
+
+---
+class: middle, right
+background-image: url("img/kaggle.png")
+background-size: cover
+
+
+---
+class: middle, left, inverse
+background-image: url("img/nick-fewings-C2zhShTnl5I-unsplash.jpg")
+background-size: cover
+
+#Ne işime yarayacak?
+
+---
+class: middle, right
+background-image: url("img/gavin-allanwood-rObq1WBp_Ew-unsplash.jpg")
+background-size: cover
+
+
+---
+class: middle, right
+background-image: url("img/freestocks-11SgH7U6TmI-unsplash.jpg")
+background-size: cover
+
+---
+class: middle, right
+background-image: url("img/bao-menglong-yXkKfvGaipw-unsplash.jpg")
+background-size: cover
+
+---
+class: middle, right
+background-image: url("img/thisisengineering-raeng-qI7USKbZY_A-unsplash.jpg")
+background-size: cover
+
+---
+class: middle, right
+background-image: url("img/possessed-photography-g29arbbvPjo-unsplash.jpg")
+background-size: cover
+
+---
+
+class: right, inverse
+background-image: url("img/jason-tuinstra-551608-unsplash.jpg")
+background-size: cover
+
+
+#Yapay öğrenmenin (machine learning) altında yatan ana teori istatistiğe dayanır.
+
+Ethem Alpaydın, "Yapay Öğrenme, Yeni Yapay Zeka", (2020), 35.
+
+---
+class: middle, right
+background-image: url("img/rmarkdown.png")
+background-size: cover
+---
+
+class: middle, right
+background-image: url("img/rpres1.png")
+background-size: cover
+---
+
+class: left, inverse
+background-image: url("img/jon-tyson-hhq1Lxtuwd8-unsplash.jpg")
+background-size: cover
+
+# Soru / Cevap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

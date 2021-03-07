@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Mühendisler için İstatistik</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Busenur Kızılaslan" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js" integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/sfah.css" type="text/css" />
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+layout: true
+  
+&lt;div class="my-footer"&gt;&lt;span&gt;Marmara University/Computer Engineering&lt;/span&gt;&lt;/div&gt;
+
+&lt;!-- this adds the link footer to all slides, depends on my-footer class in css--&gt;
+
+---
+name: xaringan-title
+class: center
+background-image: url("img/franki-chamaki-1K6IQsQbizI-unsplash.jpg")
+background-size: cover
+
+
+
+# Mühendisler için İstatistik
+
+## Dr. Busenur Kızılaslan | 2021
+
+&lt;!-- this ends up being the title slide since seal = FALSE--&gt;
+
+---
+
+class: right, middle
+
+&lt;img class="circle" src="img/busenur.sarica.png" width="200px"/&gt;
+
+
+# bana ulaşmak için...
+
+  
+[&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; @busenurk](https://github.com/busenurk)  
+[&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/&gt;&lt;/svg&gt; googlescholar/busenurkizilaslan](https://scholar.google.com.tr/citations?user=OKlYJEgAAAAJ&amp;hl=tr&amp;oi=ao)  
+[&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/&gt;&lt;/svg&gt; avesis/busenurkizilaslan](https://avesis.marmara.edu.tr/busenur.sarica)    
+[&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="rfa" style="height:0.75em;fill:currentColor;position:relative;"&gt;&lt;path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/&gt;&lt;/svg&gt; busenur.sarica@marmara.edu.tr](mailto:busenur.sarica@marmara.edu.tr)
+
+---
+class: right
+background-image: url("img/matthew-henry-2Ts5HnA67k8-unsplash.jpg")
+background-size: cover
+
+# Ders Planı
+
+--
+
+## Her perşembe
+
+--
+
+## Ders | 09:00 - 09:50 
+
+--
+
+## Kahve molası | 09:50 - 10:00 
+
+--
+
+## Ders | 10:00 - 10:50 
+
+---
+
+class: left,middle
+# Kaynaklar
+----------------
+
+### 📙 Olasılık ve İstatistiğe Giriş (Mühendisler ve Fenciler için) | Sheldon M. Ross
+
+### 📕 Mühendisler için Uygulamalı İstatistik ve Olasılık | Douglas C. Montgomery, George C. Runger 
+
+---
+
+# Ders İçeriği  🚀
+
+ İstatistiğe Giriş ve Mühendislikteki Önemi
+
+--
+
+ Betimleyici İstatistik &lt;br&gt;
+
+--
+
+ Olasılığın Temelleri &lt;br&gt;
+
+--
+
+ Rastgele Değişkenler &lt;br&gt;
+
+--
+
+ Kesikli ve Sürekli Dağılımlar &lt;br&gt;
+
+--
+
+ Örnekleme İstatistiklerinin Dağılımları &lt;br&gt;
+
+--
+
+ Parametre Tahmini &lt;br&gt;
+
+--
+
+ Hipotez Testi &lt;br&gt;
+
+--
+
+ `Bonus! Regresyona Giriş`
+
+---
+class: left, middle, inverse
+background-image: url("img/davisuko-5E5N49RWtbA-unsplash.jpg")
+background-size: cover
+
+# İSTATİSTİK NEDİR ?
+
+---
+class: middle, center
+
+# İstatistik veriden öğrenme sanatıdır. 
+
+## Sheldon M. Ross
+
+---
+class: middle, right
+background-image: url("img/kelli-tungay-2LJ4rqK2qfU-unsplash.jpg")
+background-size: cover
+
+
+### .salt[toplanması] 
+
+--
+
+### .acid[düzenlenmesi] 
+
+--
+
+### .heat[analizi]
+
+--
+
+### .salt[yorumlanması] 
+
+--
+
+### .fat[sunulması]
+
+---
+class: middle, left, inverse
+background-image: url("img/nick-fewings-C2zhShTnl5I-unsplash.jpg")
+background-size: cover
+
+#Ne işime yarayacak?
+
+---
+class: middle, right
+background-image: url("img/gavin-allanwood-rObq1WBp_Ew-unsplash.jpg")
+background-size: cover
+
+
+---
+class: middle, right
+background-image: url("img/freestocks-11SgH7U6TmI-unsplash.jpg")
+background-size: cover
+
+---
+class: middle, right
+background-image: url("img/bao-menglong-yXkKfvGaipw-unsplash.jpg")
+background-size: cover
+
+---
+class: middle, right
+background-image: url("img/thisisengineering-raeng-qI7USKbZY_A-unsplash.jpg")
+background-size: cover
+
+---
+class: middle, right
+background-image: url("img/possessed-photography-g29arbbvPjo-unsplash.jpg")
+background-size: cover
+
+---
+class: left
+
+# Neden Önemli?
+
+&lt;br&gt;
+
+ 📎 [Değişkenlik](#block1) ve çeşitlilik söz konusu olmasaydı istatistiksel yöntemlere gerek kalmazdı.
+
+&lt;br&gt;
+
+--
+
+ 📎 Değişkenliği tanımlamak, analiz etmek ve sınıflandırmak istatistiğin temel konularıdır.
+
+&lt;br&gt;
+
+--
+
+`Toplam Değişkenlik = Açıklanabilen Değişkenlik + Tesadüfi Değişkenlik`
+
+&lt;br&gt;
+
+--
+
+📎 İstatistik, [rassallık (randomness)](#block1) içeren değişkenlikle ilgilenir.
+
+&lt;br&gt;
+
+--
+
+📎 İstatistik, değişkenliğin varlığında karar vermekte ve sonuç çıkarmakta yardımcı olan bilim dalıdır.
+
+---
+class: center
+
+### .heat[İstatistik]
+
+.pull-left[
+# ↙️
+## Betimsel İstatistik
+Verilerin toplanması, özetlenmesi, tablolar ve grafiklerle sunulması, dağılım ve yayılım ölçütleri ile konum ve dağılımlarının belirlenmesi
+]
+
+
+.pull-left[
+# ↘️
+## Çıkarımsal İstatistik
+Anakütleden rastgele seçilen örneklem verilerini kullanarak anakütle parametrelerinin tahmin edilmesi ve hipotezlerin araştırılması 
+]
+
+
+---
+
+# Temel Kavramlar
+
+.saltinline[Kitle (popülasyon anakütle, anakitle, yığın, evren, **population**):] İstatistikte ilgilenilen özelliğe sahip bütün birimlerin oluşturduğu topluluk.
+
+🐱 Türkiye kedileri 
+
+--
+
+.saltinline[Örneklem (örnek, **sample**):] Kitleden rastgele seçilen daha az sayıda birimden oluşan topluluk. Kitlenin alt kümesidir.
+
+🐱 İstanbul kedileri
+
+--
+
+.saltinline[Parametre:]  Anakütlenin tanımlayıcı sayısal ölçüsüdür. Yani, tüm anakütleyi oluşturan birimlerden hesaplanan sayısal ölçülerdir.
+
+--
+
+.saltinline[İstatistik:] Örneklemin tanımlayıcı sayısal ölçüsüdür. Yani, örneklemi oluşturan birimlerden hesaplanan sayısal ölçüdür.
+
+--
+
+.saltinline[Değişken (**variable**):] İlgilenilen kitlenin bir karakteristiği veya özelliğidir. Birimlerin farklı değerler alabildikleri nitelik veya niceliklerdir.
+
+🐱 Kedilerin kilosu, boyu, cinsiyeti, rengi
+
+---
+
+class: middle, center
+background-image: url("img/joe-woods-4Zaq5xY5M_c-unsplash.jpg")
+background-size: cover
+
+.pull-left[
+
+#Anakütle
+
+#🔃
+
+#Parametre
+
+]
+
+.pull-right[
+
+#Örneklem
+
+#🔃
+
+#İstatistik
+
+]
+
+---
+
+# Veri Türleri
+
+&lt;br&gt;
+
+### Veriler [ölçüm türüne](#block) göre .heatinline[sayısal] ve .heatinline[kategorik] olmak üzere iki grupta toplanır.
+
+&lt;br&gt;
+
+--
+
+### Veriler [derlenme şekillerine](#block) göre de .fatinline[zaman serisi] ve .fatinline[yatay kesit] verisi olmak üzere sınıflandırılmaktadır. 
+
+---
+
+.pull-left[
+
+###Sayısal (nicel) veriler
+
+Gelir, Fiyat, Yaş
+
+Üretim, maliyeti
+
+]
+
+--
+
+.pull-right[
+
+&lt;br&gt;
+
+
+```
+## # A tibble: 5 x 7
+##   carat depth table price     x     y     z
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 0.23   61.5    55   326  3.95  3.98  2.43
+## 2 0.21   59.8    61   326  3.89  3.84  2.31
+## 3 0.23   56.9    65   327  4.05  4.07  2.31
+## 4 0.290  62.4    58   334  4.2   4.23  2.63
+## 5 0.31   63.3    58   335  4.34  4.35  2.75
+```
+
+]
+
+--
+
+&lt;br&gt;
+
+.pull-left[
+
+###Kategorik (nitel) veriler
+
+Cinsiyet, Gelir grupları (düşük, orta)
+
+Eğitim düzeyleri (ilk, orta, üni)
+
+Meslek (memur, işçi)
+
+]
+
+--
+
+.pull-right[
+
+&lt;br&gt;
+
+
+```
+## # A tibble: 5 x 3
+##   cut     color clarity
+##   &lt;ord&gt;   &lt;ord&gt; &lt;ord&gt;  
+## 1 Ideal   E     SI2    
+## 2 Premium E     SI1    
+## 3 Good    E     VS1    
+## 4 Premium I     VS2    
+## 5 Good    J     SI2
+```
+
+]
+
+
+---
+
+.pull-left[
+
+##Zaman Serileri
+
+Belirli zaman aralığındaki; döviz kurları,
+
+faiz oranları, enflasyon oranı
+
+]
+
+.pull-right[
+
+
+```r
+AirPassengers
+```
+
+```
+##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+## 1949 112 118 132 129 121 135 148 148 136 119 104 118
+## 1950 115 126 141 135 125 149 170 170 158 133 114 140
+## 1951 145 150 178 163 172 178 199 199 184 162 146 166
+## 1952 171 180 193 181 183 218 230 242 209 191 172 194
+## 1953 196 196 236 235 229 243 264 272 237 211 180 201
+## 1954 204 188 235 227 234 264 302 293 259 229 203 229
+## 1955 242 233 267 269 270 315 364 347 312 274 237 278
+## 1956 284 277 317 313 318 374 413 405 355 306 271 306
+## 1957 315 301 356 348 355 422 465 467 404 347 305 336
+## 1958 340 318 362 348 363 435 491 505 404 359 310 337
+## 1959 360 342 406 396 420 472 548 559 463 407 362 405
+## 1960 417 391 419 461 472 535 622 606 508 461 390 432
+```
+
+
+]
+
+--
+
+##Yatay Kesit Verileri
+
+Sabit bir zamanda gözlenerek elde edilmiş verilerdir. Anket yoluyla derlenen veriler örnek olarak verilebilir. 
+
+2007 yılının Ocak ayında Türkiye’de illere göre otomobil sayısı, Akdeniz Ülkelerinin her birine 2009 yılının 3. çeyreğinde (temmuz-eylül) gelen toplam turist sayısı
+
+&lt;br&gt;
+
+🍎 Bknz.Panel veri
+
+---
+
+#Veri Ölçüm Düzeyleri (Ölçekler)
+
+.heatinline[Sınıflama Ölçeği (Nominal Ölçek):] Gözlem sonuçları benzerliklerine veya farklılıklarına göre sınıflandırılıyorsa bu ölçek sınıflama ölçeği olarak adlandırılır. 
+
+Cinsiyet, meslek, tutulan takım örnek olarak verilebilir. 
+
+⚽ Galatasaray = 1
+
+⚽ Beşiktaş = 2 
+
+⚽ Fenerbahçe = 3
+
+**Burada atanan değerler üstünlük durumunu temsil etmez.**
+
+&lt;br&gt;
+
+--
+
+Nominal ölçekle elde edilen verilerle; 
+
+  - aritmetik ortalama hesaplanamaz, anlamı yoktur.
+  
+  - frekans (sıklık), oransal frekans (görseli sıklık), mod gibi  değerler hesaplanabilir.
+
+---
+
+#Veri Ölçüm Düzeyleri (Ölçekler)
+
+.heatinline[Sıralama Ölçeği (Ordinal Ölçek):] Gözlem sonuçları bir sınıflamaya tabi tutulmakla beraber belli bir özelliğe sahip olma bakımından sıralanabiliyorsa bu sıralama ölçeğidir.
+
+Eğitim durumu; İlköğretim, Lise, Lisans, Y. Lisans gibi
+
+Sağlık durumu; kötü, orta, iyi gibi
+
+Yarışma sonucu dereceler; birinci, ikinci, üçüncü
+
+**Verilen değerler sıralama amaçlı olup matematiksel anlam taşımamaktadır.**
+
+&lt;br&gt;
+
+Sıralama ölçeğiyle elde edilen verilerle; 
+
+  - aritmetik ortalama hesaplanamaz, anlamı yoktur.
+  
+  - birikimli frekans , birikimli oransal frekans, medyan gibi  değerler hesaplanabilir.
+  
+---
+
+#Veri Ölçüm Düzeyleri (Ölçekler)
+
+.heatinline[Eşit Aralıklı Ölçek:] Nominal ve sıralı ölçek türlerine göre daha hassas bir ölçme sağlar ve sayıların sırasının ve sayılar arası uzaklığın bir anlamı vardır.
+
+Sıfır noktası isteğe bağlı olarak tanımlandığından sıfır değeri ölçülen özelliğin bulunmadığı anlamını taşımaz.
+
+&lt;br&gt;
+
+| Şehir | Sıralama Ölçeği | Eşit Aralıklı Ölçek |
+|:----:|:----:|:----:|
+|Antalya|1 (10)|24 C|
+|Ankara|2 (20)|19 C|
+|Kars|3 (30)|11 C|
+
+&lt;br&gt;
+
+**Sıralama ölçeğinde** yer alan 1, 2, 3 sayısal değer ifade etmediğinden 10, 20, 30 olarak da seçilebilir. 
+
+**Eşit aralıklı ölçekte** ise ölçüm değerleri arasındaki farklar önemlidir, bu bakımdan Antalya-Ankara arası sıcaklık farkının (24-19=5), Ankara-Kars arası sıcaklık farkından (19-11=8) az olduğu söyleyenebilir.
+
+---
+
+#Veri Ölçüm Düzeyleri (Ölçekler)
+
+.heatinline[Oran Ölçeği:] Bahsi geçen diğer ölçeklerin bütün özelliklerini taşımakla birlikte hepsinden üstündür. Değerler arası farkı belirleyebilir ve bu değerlerin birbirine göre oranının bulunmasına imkan tanır.
+
+--
+
+Oran ölçeğinin aralık ölçeğinden farkı sıfır noktasının isteğe bağlı olmadan tanımlanmasıdır. 
+
+--
+
+Yaş, ağırlık, ücret ve not gibi anlamlı bir sıfır değerine de sahip olan ölçme düzeyidir.
+
+--
+
+&lt;br&gt;
+
+.saltinline[Sınıflama ve sıralama ölçeklerinde ölçülen değişkenler nitel (kategorik, sayısal olmayan) değişkenlerdir.]
+
+
+--
+
+&lt;br&gt;
+
+.saltinline[Eşit aralık ve oran ölçekleride ölçülen değişkenler nitel (sayısal) değişkenlerdir.]
+
+
+---
+
+class: right, inverse
+background-image: url("img/jason-tuinstra-551608-unsplash.jpg")
+background-size: cover
+
+
+#Yapay öğrenmenin (machine learning) altında yatan ana teori istatistiğe dayanır.
+
+Ethem Alpaydın, "Yapay Öğrenme, Yeni Yapay Zeka", (2020), 35.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
