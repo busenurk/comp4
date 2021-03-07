@@ -264,7 +264,11 @@ background-size: cover
 
 # Soru / Cevap
 
+---
 
+class: middle, right
+background-image: url("img/waldemar-brandt-YKtxjGsl1BY-unsplash.jpg")
+background-size: cover
 
 
 
