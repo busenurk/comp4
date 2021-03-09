@@ -112,6 +112,10 @@ class: left
 
 [The Book of R - Tilman M. Davies](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
 
+[Veri Bilimi - John D. Kelleher, Brendan Tierney](https://www.dr.com.tr/Kitap/Veri-Bilimi/Bilim/Bilim-Tarihi-ve-Felsefesi/urunno=0001900386001)
+
+[Yapay Öğrenme, Yeni Yapay Zeka - Ethem Alpaydın](https://www.dr.com.tr/Kitap/Yapay-Ogrenme-Yeni-Yapay-Zeka/Bilim/Bilim-Tarihi-ve-Felsefesi/urunno=0001900387001?gclid=Cj0KCQiA1pyCBhCtARIsAHaY_5caCdqo9fIsWR7oqvsalW-nCzBDzdAzgueHfA4vf9fyPNwmMIBJ-D4aAqghEALw_wcB&gclsrc=aw.ds)
+
 ---
 
 class: left
@@ -265,10 +269,281 @@ background-size: cover
 # Soru / Cevap
 
 ---
-
-class: middle, right
-background-image: url("img/waldemar-brandt-YKtxjGsl1BY-unsplash.jpg")
+class: inverse, left, bottom
+background-image: url("img/ev-gpjvRZyavZc-unsplash.jpg")
 background-size: cover
+
+# .salt[Veri Bilimi]
+
+---
+  
+## Veri bilimi, yapay öğrenme ve veri madenciliği terimleri sıklıkla birbirinin yerine kullanılsa da veri biliminin etki alanı daha geniştir.
+  
+<br>
+  
+--
+  
+.salt[Yapay Öğrenme (Machine Learning)]
+
+--
+  
+.fat[Veri Madenciliği (Data Mining)]
+
+--
+  
+.acid[Veri Bilimi (Data Science)]
+
+---
+  
+.salt[Yapay Öğrenme (Machine Learning)]
+
+Veriden örüntüler çıkarmak amacıyla algoritmaların tasarlanmasına ve değerlendirilmesine odaklanır.
+
+<br>
+  
+--
+  
+.fat[Veri Madenciliği (Data Mining)]
+
+**Yapılandırılmış (structured)** verinin analizi ile uğraşır.
+
+<br>
+  
+--
+  
+.acid[Veri Bilimi (Data Science)]
+
+Tüm bu yapıları dikkate almakla birlikte **yapılandırılmamış** verilerin yakalanması (data capturing), temizlenmesi ve dönüştürülmesini de gerçekleştirir.
+
+--
+
+**Yapılandırılmamış** veri kümelerinin depolanması, işlenmesi için büyük veri teknolojilerini kullanır.
+
+--
+
+Veri etiği ve mevzuatına dair sorularla ilgilenir.
+
+---
+  
+`Yapılandırılmış veri (structured data);` her örneği aynı yapıya (yani nitelik kümesine) sahip olan ve tablolarda depolanan verilerdir.
+
+🍎 Demografik veri
+
+<br>
+  
+--
+  
+`Yapılandırılmamış veri (unstructured data);` veri kümesindeki her bir örneğin kendine ait bir içsel yapısına sahip olabildiği ancak bu yapıların her örnekte aynı olmak zorunda olmadığı verilerdir.
+
+🍎 Web sayfalarına dair veri
+
+<br>
+  
+--
+  
+Yapılandırılmamış veriler yapılandırılmış verilerden daha yaygındır.
+
+<br>
+  
+--
+  
+Bilgisayarlı görme (Computer vision), dijital sinyal işleme (digital signal processing), doğal dil işleme (natural language processing) vb. yöntemler kullanılarak yapılandırılmamış veriden yapılandırılmış veri elde edilebilmektedir.
+
+<br>
+  
+--
+  
+Bu dönüştürme işlemlerini uygulamak zaman ve maliyet açısından verimi düşürmektedir.
+
+---
+class: middle
+
+.pull-left[
+
+###Yapılandırılmamış veri zaman ve maliyet kaybı yaratıyorsa neden üzerine çalışılıyor?
+      
+<br>
+        
+###NoSQL nedir?
+
+<br>
+
+### .JSON nedir?
+        
+]
+
+
+.pull-right[
+    
+![](img/Professortocat_v2.png)
+    
+]
+
+---
+
+.salt[Veri biliminin kullanımındaki artış nedenleri]
+
+<br>
+
+🌵 Büyük veri (big data)
+
+--
+
+🌵 Sosyal medya
+
+--
+
+🌵 Bilgi işlemin gücündeki hızlanma
+
+--
+
+🌵 Bilgisayar belleğinin maliyetindeki düşüş
+
+--
+
+🌵 Derin öğrenme (deep learning) gibi yöntemlerin gelişimi
+  
+--
+
+<br>
+
+***Kuruluşlar için veri toplamak, depolamak ve işlemek hiçbir zaman bugünkü kadar kolay olmamıştır.***
+
+
+--
+
+<br>
+
+***Veri kullanımına ve bireysel mahremiyete ilişkin etik güçlerin aşılması hiçbir zaman bugünkü kadar aciliyet kazanmamıştır.***
+
+---
+background-image: url("img/bernard-hermant-_THpp4Hs8LU-unsplash.jpg")
+background-size: cover
+
+###İnsan, üçten fazla niteliği ve etkileşimini yorumlamakta zorlanırken veri bilimi yüzlerce, binlerce hatta milyonlarca nitelik arasındaki örüntüleri bulmak istediğimizde faydalıdır.
+
+<br>
+
+--
+
+###Günümüzde çoğu veri bilimi projesi, yapay öğrenme yaklaşımının doğru tahmin modelleri oluşturma hedefiyle daha fazla örütşmekte, veriyi açıklama maksatlı istatistik odağıyla daha az ilgilenmektedir.
+
+<br>
+
+--
+
+###⚠️⚠️⚠️ Betimsel ve Çıkarımsal İstatistik
+
+---
+class:inverse
+background-image: url("img/nasa-Q1p7bh3SHj8-unsplash.jpg")
+background-size: cover
+
+## Veri Bilimci (Data Scientist) Kimdir?
+
+---
+
+.salt[👩🏻‍💻👨🏻‍💻 Veri bilimci,] 
+
+<br>
+
+####veri tabanlarındaki verileri uyumlandırma ve işleme becerilerine sahip olmalı,
+
+--
+
+<br>
+
+####web verisini kazıma (web scraping), temizleme ve birleştirmesi kadar yapılandırılmamış metin ve imajlarla uğraşıp onları da işleyebilmeli,
+
+--
+
+<br>
+
+####veri görselleştirme konusuna hakim olmalı ve proje çıktılarını teknik alt yapısı olmayan meslektaşlarının anlayabileceği şekilde aktarabilmeli,
+
+<br>
+
+--
+
+####veriyi yasal sınırlar dahilinde ve uygun bir şekilde kullanacaksa ilgili yönetmelikleri anlamalı ve çalışmasının yol açabileceği sonuçları değerlendirebilecek etik anlayışa sahip olmalıdır.
+
+---
+
+.heat[Girdiler çöpse çıktılar da çöp olur!]
+
+<br>
+
+--
+
+###Veri biliminin başarılı olması için verinin nasıl yaratıldığı önemlidir. (değişken seçimi, veri kalitesi)
+
+<br>
+
+--
+
+###Veri bilimi sürecinin sonuçlarına anlam kontrolü uygulanması gerekir, zira bilgisayarın veride bir örüntü saptamış olması, bunun sürece dair gerçek bir öngörü sunacağı anlamına gelmez. (yanlı tercihlerin çıktısı olabilir.)
+
+---
+
+
+###İnsan yönetimi olmaksızın, bir veri bilimi projesi hedeflerine ulaşmakta başarısız olacaktır. İnsan yönetimi gerektiren aşamalar;
+
+
+###🔺 Sorunu çerçevelemek
+
+--
+
+###🔺 Veriyi tasarlayıp hazırlamak
+
+--
+
+###🔺 Hangi ML yönteminin uygun olduğunu belirlemek
+
+--
+
+###🔺 Analiz sonuçlarını eleştirel gözle yorumlamak
+
+--
+
+###🔺 Çıktılarla en uygun eylemi planlamak
+
+---
+background-image: url("img/olia-gozha-J4kK8b9Fgj8-unsplash.jpg")
+background-size: cover
+
+.heat[McKinsey Global Institute Raporu (2011)]
+
+###ABD'de veri bilimi ve analiz yetilerine sahip 140 bin - 190 bin çalışan ihtiyacı
+
+###Veri bilimi ve analitik yorumlama sürecini yönetip yorumlayabilecek 1.5 milyon yönetici ihtiyacı (Manyika, Chui, Brown vd. 2011)
+
+--
+
+.heat[McKinsey Global Institute Raporu (2016)]
+
+###Kısa dönemde tahminen 250 bin veri bilimci açığı öngörüsü (Henke, Bughin, Chui vd. 2016)
+
+---
+
+.salt[🎅🏼 Veri Bilimi Hakkındaki Mitler]
+
+<br>
+
+###1️⃣ Veri biliminin, sorunlarımıza cevap bulması için verilerimiz üzerine salıvereceğimiz otonom bir süreç olduğu inancı
+
+--
+
+###2️⃣ Her veri bilimi projesinin büyük veriye ve derin öğrenmeyi kullanmaya ihtiyacı olduğu
+
+--
+
+###3️⃣ Modern veri bilimi yazılımlarının kullanımının kolay olduğu ve bu yüzden veri bilimci olmanın kolay olduğu
+
+--
+
+###4️⃣ Veri biliminin hızlıca kendi maliyetini karşıladığı
+
+
 
 
 
