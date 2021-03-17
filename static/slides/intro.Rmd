@@ -669,6 +669,7 @@ class: center, middle
 ![](img/tidy.png)
 
 ---
+
 class: center, middle
 background-image: url("img/mel-poole-eo5Hrzyb4D0-unsplash.jpg")
 background-size: cover
@@ -677,8 +678,210 @@ background-size: cover
 
 ### with TIDYVERSE
 
+---
+
+####.salt[Referanslar]
 
 
+.pull-left[
+
+<img class="circle" src="img/hadley.jpg" width="200px"/>
+
+**Hadley Wickham**
+
+@RStudio
+
+<br>
+
+[📺 Effective frameworks for thinking about data analysis-data science problems in R](https://rstudio.com/resources/webinars/effective-frameworks-for-thinking-about-data-analysis-data-science-problems-in-r/)
+]
+
+.pull-right[
+
+<img class="circle" src="img/garrett.jpeg" width="200px"/>
+
+**Garrett Grolemund**
+
+@RStudio
+
+<br>
+
+[📓 Data Science with R](https://garrettgman.github.io/tidying/)
+
+
+[📺 Tidyverse visualization manipulation basics](https://rstudio.com/resources/webinars/tidyverse-visualization-manipulation-basics/)
+
+]
+
+
+---
+
+![](img/td1.png)
+---
+
+
+![](img/td2.png)
+---
+
+
+![](img/tidypack.png)
+
+---
+####.salt[Pipe Operator]
+
+--------------
+
+<br>
+
+.pull-left[
+
+####x %>% f(y)
+
+#### 🌱 f(x,y)
+
+
+<br>
+
+#### x %>% f(z,.)
+
+#### 🌱 f(z,x)
+
+<br>
+
+
+####x %>% f(y) %>% g(z)
+
+#### 🌱 g(f(x,y),z)
+
+]
+
+.pull-right[
+
+<br>
+
+![](img/pipe.png)
+]
+---
+
+#### .salt[Tidy data; veri analizini kolaylaştıran veri tipi]
+
+![](img/tidy2.png)
+
+---
+
+![](img/untidy.png)
+
+---
+
+####.salt[Data set 1]
+
+<br>
+
+<img src="img/table1.png" style="float:center;" width="1500" height="300" />
+
+
+---
+####.salt[Data set 2]
+
+<br>
+
+![](img/table2.png)
+---
+####.salt[Data set 3]
+
+<br>
+
+![](img/table3.png)
+
+---
+####.salt[Data set 4 - 5]
+
+<br>
+
+![](img/table4.png)
+
+---
+class:middle
+background-image: url("img/ben-neale-29w9FiMWSr8-unsplash.jpg")
+background-size: cover
+
+
+#.acid[KEY]     
+
+<br>
+
+#.acid[VALUE]
+
+---
+
+####.fat[🎯 spread()]
+
+![](img/spread.png)
+
+---
+
+####.fat[🎯 gather()]
+
+![](img/gather.png)
+---
+
+![](img/untidy.png)
+
+---
+
+##2014 World Health Organization Global Tuberculosis Report
+
+Data reported between 1995 and 2013 sorted by country, age, and gender [📖](www.who.int/tb/country/data/download/en/)
+
+<br>
+
+.pull-left[
+
+`rel` stands for cases of relapse
+
+`ep` stands for cases of extrapulmonary TB
+
+`sn` stands for cases of pulmonary TB that could not be diagnosed by a pulmonary smear (smear negative)
+
+`sp` stands for cases of pulmonary TB that could be diagnosed be a pulmonary smear (smear positive)
+
+`m` male, `f` female
+
+]
+
+.pull-right[
+
+`014` stands for patients that are 0 to 14 years old
+
+`1524` stands for patients that are 15 to 24 years old
+
+`2534` stands for patients that are 25 to 34 years old
+
+`3544` stands for patients that are 35 to 44 years old
+
+`4554` stands for patients that are 45 to 54 years old
+
+`5564` stands for patients that are 55 to 64 years old
+
+`65` stands for patients that are 65 years old or older
+]
+
+---
+
+class:middle,center
+background-image: url("img/joe-woods-4Zaq5xY5M_c-unsplash.jpg")
+background-size: cover
+
+
+# .heat[CHEAT SHEET]  
+
+#[🗝](https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf)
+---
+
+![](img/dplyr.png)
+---
+
+![](img/ggvis.png)
 
 
 
