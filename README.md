@@ -11,4 +11,4 @@ BSP2044 - Computer IV course includes spring semester (2021) lecture notes. Lect
 Have fun!
 
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/7PCQ5vfCsZU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+![](https://media.giphy.com/media/cInyJSYeuHw1Sduv8X/giphy.gif)
