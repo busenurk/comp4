@@ -883,6 +883,17 @@ background-size: cover
 
 ![](img/ggvis.png)
 
+---
+class: center, middle
+background-image: url("img/joe-woods-4Zaq5xY5M_c-unsplash.jpg")
+background-size: cover
 
+###.fat[Tidyverse ile verilerinize çeki düzen verin]
+
+<br>
+
+####.fat[ Mine Çetinkaya Rundel] 
+
+## [📎💻️](https://mine-cetinkaya-rundel.github.io/tidy-up-ds/2020-05-turkiye/tidy-up.html#1)
 
 
