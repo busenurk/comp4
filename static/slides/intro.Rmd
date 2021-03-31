@@ -896,4 +896,199 @@ background-size: cover
 
 ## [📎💻️](https://mine-cetinkaya-rundel.github.io/tidy-up-ds/2020-05-turkiye/tidy-up.html#1)
 
+---
+
+class: left, bottom, inverse
+background-image: url("img/sheep.jpg")
+background-size: cover
+
+
+# R MARKDOWN
+
+---
+class: center, middle
+background-image: url("img/engin-akyurt-bPiuY2ZSlvU-unsplash.jpg")
+background-size: cover
+
+## .heat[DENE - HATA YAP]
+
+---
+
+####.salt[Neden R Markdown?]
+
+Kullanmaya başladıktan sonra avantajlarını fark etmeye başlayacağınız, burada saymakla sınırlandırılamayacak kadar nedene sahibiz, önemli birkaç tane nedene göz atalım.
+
+.pull-left[
+
+- Kullanım kolaylığı
+
+
+- Açık kaynak
+
+
+- Forum zenginliği
+
+
+- Pandoc sayesinde farklı output seçenekleri (Html, word, pdf)
+
+
+- R dışında Python ve SQL gibi farklı dilleri kullanarak da raporlama imkanı
+
+
+- Tekrarlanabilirlik
+
+
+- Hatayı minimize etme ve zamandan kazanç
+
+- Sunuya dönüştürme imkanı
+
+]
+
+.pull-right[
+
+![](https://media.giphy.com/media/jqr50Jj5EfAyOQW1f3/giphy.gif)
+
+]
+
+---
+
+####.salt[Markup (Biçimleme) Dilleri]
+
+.saltinline[**LaTeX**]
+
+.pull-left[
+
+```{r eval=FALSE}
+$\frac{3}{5}$
+```
+
+]
+
+.pull-right[
+
+$\Large \frac{3}{5}$
+
+]
+
+<br>
+
+.saltinline[**HTML (Hypertext markup language)**]
+
+.pull-left[
+
+```{r eval=FALSE}
+<a href = "https://github.com/busenurk">
+  Busenur GitHub </a>
+```
+
+]
+
+.pull-right[
+
+<a href = "https://github.com/busenurk">Busenur GitHub</a>
+
+]
+
+<br>
+
+.saltinline[**markdown**]
+
+.pull-left[
+
+```{r eval = FALSE}
+[Busenur GitHub](https://github.com/busenurk)
+```
+]
+
+.pull-right[
+
+[Busenur GitHub](https://github.com/busenurk)
+
+]
+
+---
+
+class: left, bottom, inverse
+background-image: url("img/wizards.png")
+background-size: cover
+
+---
+
+####.salt[R Markdown Döküman Dönüştürme Süreci]
+
+```{r echo=FALSE , out.width = '50%'}
+include_graphics("img/workflow.png")
+```
+
+Tüm proses **rmarkdown::render()** fonksiyonu ile gerçekleşir.
+
+.Rmd temel dosya formatıdır. 
+
+  - .Rmd = YAML + text + code chunks
+  
+**knitr::knit()** fonksiyonu .Rmd dosyanın .md dönüşümünü sağlar.
+
+
+------
+
+[Görsel: R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-process.html)
+
+---
+
+####.salt[R Markdown Döküman Dönüştürme Süreci]
+
+```{r echo=FALSE , out.width = '40%'}
+include_graphics("img/workflow.png")
+```
+
+.md dosya Pandoc vasıtasıyla seçilen markup diline dönüştürülür.
+
+Eğer seçilen output PDF ise Pandoc .md dosyayı .tex dosyaya dönüştüreceğinden [tinytex](https://cran.r-project.org/web/packages/tinytex/tinytex.pdf) veya alternatif bir paketi yüklemeniz gerekecektir.
+
+<br> 
+
+
+#### rmarkdown::render() = knitr::knit() + Pandoc (+LaTex, PDF output için)
+
+------
+
+[Görsel: R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/rmarkdown-process.html)
+
+---
+
+####.salt[Faydalı linkler]
+
+.pull-left[
+
+#### [📕 R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+#### [🗝 Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+#### [➗✖️ Formüller_LaTex](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
+
+#### [👾 GIF](https://giphy.com)
+
+#### [🐤 Emoji](https://github.com/hadley/emo)
+
+#### [🙀 Octocat Stickers](https://octodex.github.com/)
+
+#### [📎 Ek](https://markdown-it.github.io)
+
+#### [🏞 Bonus_unsplash](https://unsplash.com/s/photos/science)
+
+#### R Studio $\longrightarrow$ Help $\longrightarrow$ Markdown Quick Reference
+
+]
+
+.pull-right[
+
+![](img/codercat.jpeg)
+]
+
+---
+
+
+
+
+
 

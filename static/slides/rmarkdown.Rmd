@@ -1,0 +1,245 @@
+---
+title: "R Markdown Hakkında"
+author:
+  name: B. Kızılaslan
+  affiliation: Marmara University
+date: "`r Sys.time()`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+# knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='img/',
+#                       echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+# Giriş
+
+**R Markdown** kullanmak için mevcut tüm yapıyı bilmek zorunda değilsiniz. Önemli olan ihtiyaç duyduğunuz aracı araştırarak bulabilmek, zaten kullandıkça farkına varmadan hafızanıza yerleştiğini göreceksiniz.
+
+<br>
+
+Burada önemli iki nokta,
+
+- Denemek ve hata yapmaktan korkmamak
+
+- Yenilikleri takip etmek
+
+🌟 `Tavsiye`, R Markdown'a başlarken temel hedefiniz amaca ulaşmak olmalı, görseller, renkler, gifler bir sonraki adım olmalı, zira 1 saatte hazırlanabilecek raporu farkına varmadan 5 saatte hazırlayabilirsiniz. 
+
+> Görsel düzenleme zaman alır! Zamanınız bolsa yaratıcılığınızı konuşturun!
+
+----
+
+# Code Chunk
+
+Code chunk aracılığı ile aynı platform üzerinden hem kodlama işlemi hem metinsel raporlama yapılabilmektedir.
+
+```{r toplam, cache=TRUE}
+2+2
+```
+
+<br>
+
+⏳ **cache** opsiyonu zamandan kazanç sağlar.
+
+<br>
+
+Raporda code chunk output görünürlüğü ayarı yapılabildiği gibi kodu çalıştırıp hiçbir kod satırı paylaşmama opsiyonu da mevcuttur.
+
+<br>
+
+**Yalnızca output görünsün (echo=FALSE)**
+
+```{r echo=FALSE}
+x<-1:10
+x
+```
+
+<br>
+
+**Uyarılar görünmesin (warning=FALSE)**
+
+```{r warning=FALSE}
+library(tidyverse)
+
+airquality %>% select(Ozone) %>% max(na.rm=T)
+```
+
+<br>
+
+R Markdown neden kullanışlı? başlığı altında hata olasılığımızı düşürdüğünden bahsetmiştik. Herhangi bir programlama diliyle çalışarak raporu ayrı bir platformda oluşturduğunuzda sonuçların aktarılması noktası hataya çok açıktır, R bu konuda bize kolaylık sağlar.
+
+```{r}
+mean<- mtcars %>% filter(hp>100) %>% summarise(mean(mpg))
+```
+
+mtcars veri setinde beygir gücü (hp) 100'ün üzerinde olan araçların mil başına yakıt tüketim (mpg) ortalaması `r mean` olarak elde edilmiştir.
+
+
+<br>
+
+```{r message=FALSE, warning=FALSE}
+library(plotly)
+var<-c(rnorm(50,5,1),10)
+plot_ly(y=~var, type = "box")
+
+```
+
+----
+
+# Eşitlikler
+
+Raporlarda text, görsel ve kodlar dışında _matematiksel ifadelere_ de ihtiyaç duyacaksınız. Bu bakımdan bu yanınızı geliştirmeniz gerekecektir. Tanımlamalara google'dan araştırarak ulaşabileceğiniz gibi bir örnek olarak [LaTeX](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) sayfasından da ulaşabilirsiniz.
+
+💊 Formül tanımlarken `$` kullanmayı unutmayınız.
+
+$\mu_{i}$
+
+$$ \sum_{i=1}^nA_{i}$$
+$P(\text{Dersten geçme})=0.70$
+
+$K=\{YY,YT,TY,TT\}$
+
+$$\sqrt{5}$$
+
+<br>
+
+**Bazı uzun ve iç içe eşitliklerde punto okumayı zorlaştırabilir, büyük yazmak gerekebilir.**
+
+$\frac{\big(\frac{\frac{1}{2}\mu+\delta}{2/3}\big)}{4/7}$
+
+$\large \frac{\big(\frac{\frac{1}{2}\mu+\delta}{2/3}\big)}{4/7}$
+
+$\Large \frac{\big(\frac{\frac{1}{2}\mu+\delta}{2/3}\big)}{4/7}$
+
+----
+
+# Figürler
+
+Raporunuza figür eklemenin bir çok farklı yolu bulunmaktadır. İki alternatif yöntem aşağıda paylaşılacaktır, dersin temeli araştırma olduğundan seçenek ve gelişmiş versiyonlarını yakalamak size düşüyor :)
+
+
+```{r echo=FALSE , out.width = '40%', fig.align='center',fig.cap="**Hadley Wickham**"}  
+knitr::include_graphics("img/hadley.jpg") ## echo=FALSE, kodu gosterme
+```
+
+<br>
+
+![_Garrett Grolemund_](img/garrett.jpeg){width=200}
+
+
+----
+
+# Temel Tablo İşlevi
+
+R Markdown, code chunk kullanarak raporlama imkanı sağladığından bu opsiyona fazla ihtiyaç duymayacaksınız ancak basit tablolama durumunda iş görüyor.
+
+<br>
+
+|Kodlama ve araştırma süresi (Saat)| Alınan not| Öğrencinin beklediği not|
+|:----:|:-----|------:|
+|2|50|100|
+|1|30|100|
+|3|70|100|
+|5|100|100|
+
+*****
+
+# Zamanım Bol Diyenler için!
+
+```
+
+GitHub repolarından taslakları inceleyip kendi tasarımınızı oluşturabilirsiniz.
+
+```
+
+
+## Gif
+
+![](https://media.giphy.com/media/YqTzLj0Vzct9K/giphy.gif)
+
+![](https://media.giphy.com/media/USP5uUB0iDucn5zr2z/giphy.gif){width=150}
+
+
+<br>
+
+
+## Emoji, Teşekkürler Hadley^[hadley footnote]!
+
+<br>
+
+# 👨‍🚀👨🏻‍🚀👨🏼‍🚀👨🏽‍🚀👨🏾‍🚀👨🏿‍🚀👩‍🚀👩🏻‍🚀👩🏼‍🚀👩🏽‍🚀👩🏾‍🚀👩🏿‍🚀
+
+<br>
+
+#### [🎅🏼Emoji list](https://github.com/hadley/emo)
+
+
+*****
+
+# Uyarılar!
+
+Çok basit yazım hataları sebebiyle problem yaşamanız muhtemel. Tekrar, tekrar aynı noktaya geliyoruz, pratik yapmak işlerinizi her anlamda kolaylaştırıyor, fazla pratik yaptığınızda daha sık hata ile karşılaşacağınızdan hata çözme beceriniz de gelişiyor ve muhtemel hataları hızla fark ediyorsunuz.
+
+**Hata1:** satır boşluğu bırakmamak
+
+~~Madde1~~
+Madde2
+Madde3^2^
+
+#örnek
+örnek
+
+<br>
+
+**Hata2:** eşitlik yazarken $ eksikliği
+
+$\frac{pay}{payda}
+
+$\frac{pay}{payda}$
+
+<br>
+
+**Hata3:** eşitlik yazarken süslü parantez `{}` yerine normal parantez kullanmak `()` (kodlama ile text yazımını karıştırmak)
+
+$\large \bar{x}$
+
+$\large \bar(x)$
+
+$\large \bar x$
+
+<br>
+
+**Hata4:** yazımda boşluk bırakmayı unutmak.
+
+$A\cap B$
+
+$A\capB$
+
+<br>
+
+- Madde 1
+
+-Madde 2
+
+**Hata5:** Hatalı kod yazımı nedeniyle çalışmayan kodun hatasını metinde aramak, `error nedir okumanın önemi!`
+
+<br>
+
+**Hata6:** figur eklerken dosya adreslemenin doğru yapılmaması.
+
+⚠️ Genel manada hata aldığınızda ilk olarak hatayı uyarısını anlamaya çalışmak, ardından eksik paket, yanlış kod veya muhtemel yazım hatalarını incelemeniz önerilir.
+
+-----
+
+# Araştır child, CSS ve YAML
+
+<br>
+
+Kendi taslağınızı oluşturmak ve kodlama kolaylığı sağlamak açısından yazılımı geliştirmek mümkün.
+
+<br>
+
+
