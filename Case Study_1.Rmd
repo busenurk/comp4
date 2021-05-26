@@ -1,0 +1,70 @@
+---
+title: "Case Study_1"
+author: "B. Kızılaslan"
+date: "26/05/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(corrr)
+library(tidyverse)
+library(nycflights13)
+```
+
+Süreniz 45 dakikadır, başarılar!
+
+# NYC Flights 
+
+2013 yılında NYC'den kalkan uçuşlar ile ilgili veri setlerini içeren **nycflights13** paketi ile çalışacağız. Veri seti `airlines, airports, flights, planes` ve `weather` verilerini içermektedir. (Veri setlerinin detayı için **nycflights13** paketini inceleyiniz.) 
+Her bir veri setini `View()` komutu ile ayrı bir tablo olarak açıp detaylı inceleyiniz, süreci kavrayabilmeniz için veri setine hakim olmanız gerekmektedir.
+
+```{r}
+View(planes)  #ornegin
+```
+
+Veri setlerini dikkatle incelediğinizde farklı veri setlerinin ortak değişkenler içerdiğini göreceksiniz, bu sizin veri setlerini birbirine bağlayarak daha fazla veri üzerinden çalışmanızı sağlayacaktır.
+
+Ortak değişkenler ve veri setleri için örnek olarak;
+
+- planes ve flights veri setlerinde tailnum değişkeni
+
+- flights ve weather veri setlerinde origin, year, month, day, hour değişkenleri
+
+- flights ve airlines veri setlerinde carrier değişkeni
+
+
+**Soru1.** Havada kalış süresi (air_time) en fazla olan uçak için üretim yılı (year), üretici (manufacturer) ve model (model) bilgisi nedir? **(Kodunuzda hata alıyorsanız year değişkenini verinizde kontrol ediniz!)**
+
+```{r}
+
+data1<- left_join(flights,planes,by=".....") 
+
+data1 %>% filter(air_time==max(air_time,.....)) %>%
+  select(....., manufacturer,....)
+```
+
+**Soru2.** Havada kalış süresi (air_time), sıcaklık (temp), rüzgar hızı (wind_speed) ve nem (humid) arasında ne tür bir ilişki vardır? İnceleyip yorumlayınız.
+
+```{r}
+data2<- left_join(weather,flights,by=c("origin","year",".....","day","hour"))
+data2 %>% select(air_time,temp,......,humid) %>% 
+correlate() 
+```
+
+**Soru3.** Her bir hava yolu şirketi (name) için ortalama ve ortanca gecikme süresilerini (dep_delay) inceleyip yorumlayınız. (erken varışları dikkate almayınız.)
+
+```{r}
+data3<- right_join(airlines,flights,by="carrier")
+data3 %>% filter(.......) %>% na.omit() %>% group_by(name) %>% summarise(mean=mean(dep_delay),median=median(......))
+
+```
+
+**Soru4.** flights veri setinde yer alan gecikme süresi (dep_delay) değişkeni için 2013 yılı ortalama gecikme süresi kaçtır? (erken varışları dikkate almayınız.)
+
+
+```{r}
+
+```
+
+Sınavınız bitmiştir, 19:00 da ikinci derste görüşmek üzere!
