@@ -6,7 +6,7 @@ BSP2044 - Bilgisayar IV dersi bahar dönemi (2021) ders notlarını içerir. Der
 
 -----------
 
-It includes the spring semester (2021) lecture notes for BSP2044 - Computer IV course. Lecture notes are updated every week, please be careful to follow the current version.
+The repo includes the spring semester (2021) lecture notes for BSP2044 - Computer IV course. Lecture notes are updated every week, please be careful to follow the current version.
 
 Have fun!
 
