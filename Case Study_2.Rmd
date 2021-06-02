@@ -1,0 +1,74 @@
+---
+title: "Case Study_2"
+author: "B. Kızılaslan"
+date: "02/06/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(Lahman)
+library(tidyverse)
+```
+
+# Sean 'Lahman' Baseball Database
+
+Case Study_2 için **Lahman** paketi içerisinde yer alan `People`, `AwardsPlayers` ve `Salaries` veri setleri üzerinde çalışacaksınız. Veri setlerini inceleyiniz ve aşağıda yer alan sorular paralelinde hazırlanmış olan test sorularını yanıtlayınız.
+
+```{r}
+View(People)
+```
+
+Bu çalışmada ortak değişkenleri sizin tespit etmeniz gerekmektedir.
+
+
+**Soru1.** AwardsPlayers veri setini incelediğinizde en çok ödül alan oyuncu kimdir? (People veri seti nameFirst ve nameLast değişkenleri ile yanıtlayınız.)
+
+```{r}
+t<-table(AwardsPlayers$playerID) %>% as.data.frame()
+names(t)<-c("......","num.of.aw")
+data1<-People %>% ....._join(t,by=......)   
+data1 %>% filter(............) %>%   
+  select(nameFirst,.......)
+
+```
+
+**Soru2.** People veri setinde yer alan weight ve height değişkenlerini kullanarak body mass index (BMI) hesaplayınız. BMI formülü ve değerlendirme tablosu aşağıda yer almaktadır.
+
+$BMI=\frac{weight}{height^{2}}*703$
+
+<br>
+
+|BMI|Classification|
+|:-:|:------------:|
+|<18.5|Under weight|
+|18.5-24.9|Normal weight|
+|25-29.9|Over weight|
+|30-34.9|Obesity class 1|
+|35-39.9|Obesity class 2|
+|40 or above|Obesity class 3|
+
+<br>
+
+Oyunculardan kaç tanesi normal weight kategorisine girmektedir?
+
+```{r}
+People %>% mutate(BMI=.......) %>% filter(..........) %>% ......
+  
+```
+
+**Soru3.** Salaries ve AwardsPlayers veri setlerini inceleyiniz, en fazla ödül alan oyuncunun en yüksek maaşa sahip olduğu söylenebilir mi? 
+
+```{r}
+data2<-Salaries %>% ....._join(t,by=.......) 
+which.max(data2$.....)==which.max(data2$......)
+```
+
+
+**Soru4.** En çok alınan ödül hangisidir?
+
+```{r}
+
+```
+
+Sınavınız bitmiştir, 19:00 da ikinci derste görüşmek üzere!
